@@ -16,7 +16,7 @@ Dependencies:
 - pandas
 - requests 
 
-To Install: 
+To Install on Windows: 
 1) Install the latest version of Python (https://www.python.org/downloads/), checking the "Add to PATH" option on install, and open up command prompt.
 2) Download all files in the repository and place the COVID-19_School_Risk.py someplace where you know the path and won't move it.
 3) Run the install.bat file (by double clicking on it).
