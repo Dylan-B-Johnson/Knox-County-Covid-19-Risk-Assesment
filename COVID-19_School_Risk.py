@@ -1,10 +1,10 @@
 # "Researchers say anywhere from 25 percent to 80 percent of people with COVID-19 are unaware they have the virus.""
 # From Healthline:
 # https://www.healthline.com/health-news/50-percent-of-people-with-covid19-not-aware-have-virus
-# Model assumes the quartiles, minimum, and maximum frequency of asymptomatic carriers from the above source.
-# Model assumes active cases have self-isolated 
-# Model assumes the group has the same prevalence of COVID as all other groups in Knox County
-# Model assumes that asymptomatic carriers don't know they have the virus. 
+# Prediction  assumes the quartiles, minimum, and maximum frequency of asymptomatic carriers from the above source.
+# Prediction  assumes active cases have self-isolated 
+# Prediction  assumes the group has the same prevalence of COVID as all other groups in Knox County
+# Prediction  assumes that asymptomatic carriers don't know they have the virus. 
 # Data is scraped from Knox County's COVID data page
 
 import pandas as pd
