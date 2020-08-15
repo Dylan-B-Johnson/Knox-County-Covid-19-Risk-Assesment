@@ -39,7 +39,8 @@ This project scrapes its data from the Knox County Health Department at: https:/
 6) You can now check up on the data and enter any group size you want by simpily double clicking on the COVID-19_School_Risk.py file (if this asks for an application to open it with select Python3.8).
 
 * Note: If you plan to use Python for anything else, I would recommend installing anaconda to manage your Python packages using conda environments.
-
+### To Do:
+- [ ] Schedule a batch script to write and upload the daily best prediction and prediction range for the West HS and the county.
 ### License:
 Copyright [2020] [Dylan Johnson]
 
