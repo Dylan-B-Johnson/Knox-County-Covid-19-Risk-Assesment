@@ -1,11 +1,18 @@
-# "Researchers say anywhere from 25 percent to 80 percent of Ppl with COVID-19 are unaware they have the virus.""
-# From Healthline:
-# https://www.healthline.com/health-news/50-percent-of-Ppl-with-covid19-not-aware-have-virus
-# Prediction  assumes the quartiles, minimum, and maximum frequency of asymptomatic carriers from the above source.
-# Prediction  assumes active cases have self-isolated 
-# Prediction  assumes the group has the same prevalence of COVID as all other groups in Knox County
-# Prediction  assumes that asymptomatic carriers don't know they have the virus. 
-# Data is scraped from Knox County's COVID data page
+"""
+Copyright [2020] [Dylan Johnson]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+"""
 
 from datetime import date
 import datetime
