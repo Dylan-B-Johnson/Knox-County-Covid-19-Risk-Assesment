@@ -22,3 +22,4 @@ To Install:
 3) Press "y" twice when prompted.
 6) Edit the COVID19_Assesment.bat file (you can use notepad) and repalce the <user> with your username and the <path> with the rest of the path to the
   COVID-19_School_Risk.py file.
+7) You can now check up on the data and enter any group size you want by simpily double clicking on the COVID19_Assesment.bat file.
