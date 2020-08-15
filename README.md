@@ -39,7 +39,7 @@ Note: The CDC's estimates are for asymptomatic carriers, not all those that don'
 
 Note: If you plan to use Python for anything else, I would recommend installing anaconda to manage your Python packages using conda environments.
 
-### Liscence:
+### License:
 Copyright [2020] [Dylan Johnson]
 
 Licensed under the Apache License, Version 2.0 (the "License");
