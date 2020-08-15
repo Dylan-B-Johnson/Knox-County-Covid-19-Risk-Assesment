@@ -7,7 +7,7 @@ This project scrapes its data from the Knox County Health Department at: https:/
 Prediction assumptions:
 "Researchers say anywhere from 25 percent to 80 percent of people with COVID-19 are unaware they have the virus."
 --Healthline:   https://www.healthline.com/health-news/50-percent-of-people-with-covid19-not-aware-have-virus.
-Prediction assumes the quartiles, minimum, and maximum frequency of asymptomatic carriers from the above source.
+Prediction assumes the quartiles, minimum, and maximum frequency of asymptomatic carriers from the aforementioned source.
 Prediction assumes active cases have self-isolated. 
 Prediction assumes the group has the same prevalence of COVID as all other groups in Knox County.
 Prediction assumes that asymptomatic carriers don't know they have the virus. 
