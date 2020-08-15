@@ -1,5 +1,5 @@
 # COVID-19 Risk Assesment for Knox County
-This project has a program, which allows you to view up to date Knox County COVID-19 data, as well as calculate the expected number of people in a 
+COVID-19_School_Risk.py allows you to view up to date Knox County COVID-19 data, as well as calculate the expected number of people in a 
 group of a given size that would have COVID-19 and be asymptomatic.
 
 This project scrapes its data from the Knox County Health Department at: https://covid.knoxcountytn.gov/case-count.html.
