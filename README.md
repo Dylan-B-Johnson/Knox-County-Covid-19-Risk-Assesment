@@ -15,8 +15,8 @@ This project scrapes its data from the Knox County Health Department at: https:/
 Note: The CDC's estimates are for asymptomatic carriers, not all those that don't know they have the virus, which would include presymptomatic cariers, so these predictions might be a bit lower than they should be.
 
 ### Formula for Prediction:
-- Predicted Total Asymptomatic Cases in the County = ((Current Active Cases)/(1-Assumed Asymptomatic Carrier Percentage (as a decimal)))-Current Active Cases
-- Predicted Asymptomatic Cases in a Group of Size N = Predicted Total Asymptomatic Cases in the County/Current County Population\*N
+- `Predicted Total Asymptomatic Cases in the County = ((Current Active Cases)/(1-Assumed Asymptomatic Carrier Percentage (as a decimal)))-Current Active Cases`
+- `Predicted Asymptomatic Cases in a Group of Size N = Predicted Total Asymptomatic Cases in the County/Current County Population\*N`
 
 ### Dependencies:
 - requests 
