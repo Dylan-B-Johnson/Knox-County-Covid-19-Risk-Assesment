@@ -18,8 +18,10 @@ Dependencies:
 
 To Install: 
 1) Install the latest version of Python (https://www.python.org/downloads/), checking the "Add to PATH" option on install, and open up command prompt.
-2) Run the install.bat file (by double clicking on it).
-3) Press "y" twice when prompted.
+2) Download all files in the repository and place the COVID-19_School_Risk.py someplace where you know the path and won't move it.
+3) Run the install.bat file (by double clicking on it).
+4) Press "y" twice when prompted.
+5) If this worked you can delete the install.bat file.
 6) Edit the COVID19_Assesment.bat file (you can use notepad) and repalce the <user> with your username and the <path> with the rest of the path to the
   COVID-19_School_Risk.py file.
 7) You can now check up on the data and enter any group size you want by simpily double clicking on the COVID19_Assesment.bat file.
