@@ -15,8 +15,8 @@ This project scrapes its data from the Knox County Health Department at: https:/
 Note: The CDC's estimates are for asymptomatic carriers, not all those that don't know they have the virus, which would include presymptomatic cariers, so these predictions might be a bit lower than they should be.
 
 ### Formula for Prediction:
-* `Predicted Total Asymptomatic Cases in the County = ((Current Active Cases)/(1-Assumed Asymptomatic Carrier Percentage (as a decimal)))-Current Active Cases`
-* `Predicted Asymptomatic Cases in a Group of Size N = Predicted Total Asymptomatic Cases in the County/Current County Population\*N`
+* Predicted Total Asymptomatic Cases in the County = ((Current Active Cases)/(1-Assumed Asymptomatic Carrier Percentage (as a decimal)))-Current Active Cases
+* Predicted Asymptomatic Cases in a Group of Size N = Predicted Total Asymptomatic Cases in the County/Current County Population\*N
 
 ### Dependencies:
 - requests 
@@ -33,7 +33,7 @@ Note: The CDC's estimates are for asymptomatic carriers, not all those that don'
 1) Download and install the latest version of Python (https://www.python.org/downloads/), checking the "Add to PATH" option on install. This WILL NOT WORK if you have not checked the "Add to PATH" option, which is not checked by default.
 2) Download COVID-19_School_Risk.py
 3) Press Command + Space and search for "terminal". Press enter to open it.
-4) Type 'pip install requests' and press enter. 
+4) Type '`pip install requests`' and press enter. 
 5) Press the "y" key when prompted.
 6) You can now check up on the data and enter any group size you want by simpily double clicking on the COVID-19_School_Risk.py file (if this asks for an application to open it with select Python3.8).
 
