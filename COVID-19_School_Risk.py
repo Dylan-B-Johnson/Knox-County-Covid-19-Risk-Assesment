@@ -7,7 +7,6 @@
 # Prediction  assumes that asymptomatic carriers don't know they have the virus. 
 # Data is scraped from Knox County's COVID data page
 
-import pandas as pd
 from datetime import date
 import datetime
 import requests
@@ -65,7 +64,7 @@ def knox_get_my_risk(group_size):
         if q==2:
             label='Med Assumption'
             med_west=west_students
-        if q==1: label='Q2 Assumption'
+        if q==1: label='Q1 Assumption'
         if q==0:
             label='CDC Min Assumption'
             min_west=west_students
