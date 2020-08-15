@@ -44,7 +44,6 @@ def knox_data():
 
 # Using a given group size this calculates and displays the expected number of people 
 # in that group that have COVID-19 in Knox County, Tennessee
-# Feel free to adapt for other counties 
 def knox_get_my_risk(group_size):
     print('\n\n--------------------Group COVID Risk--------------------\n')
     url = "https://covid.knoxcountytn.gov/includes/covid_cases.csv"
