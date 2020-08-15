@@ -15,3 +15,10 @@ Prediction assumes that asymptomatic carriers don't know they have the virus.
 Dependencies:
 - pandas
 - requests 
+
+To Install: 
+1) Install the latest version of Python (https://www.python.org/downloads/), checking the "Add to PATH" option on install, and open up command prompt.
+2) Run the install.bat file (by double clicking on it).
+3) Press "y" twice when prompted.
+6) Edit the COVID19_Assesment.bat file (you can use notepad) and repalce the <user> with your username and the <path> with the rest of the path to the
+  COVID-19_School_Risk.py file.
