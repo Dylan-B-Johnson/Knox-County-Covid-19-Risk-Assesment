@@ -2,7 +2,7 @@
 This project has a program, which allows you to view up to date Knox County COVID-19 data, as well as calculate the expected number of people in a 
 group of a given size that would have COVID-19, not know about it, and be asymptomatic.
 
-This project scrapes its data from the Knox County Health Department at: https://covid.knoxcountytn.gov/case-count.html .
+This project scrapes its data from the Knox County Health Department at: https://covid.knoxcountytn.gov/case-count.html.
 
 Prediction assumptions:
 "Researchers say anywhere from 25 percent to 80 percent of people with COVID-19 are unaware they have the virus."
