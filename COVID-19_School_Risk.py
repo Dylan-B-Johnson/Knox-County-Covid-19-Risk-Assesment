@@ -55,26 +55,26 @@ def knox_get_my_risk(group_size):
             population=int(i[1][:3]+i[1][-3:])
     print('Active Cases: ',active_cases,'\n')
     q=4
-    for asymp_percentage in [0.80,((0.80-0.25)*0.75),((0.80-0.25)*0.50),((0.80-0.25)*0.25),0.25]:
+    for asymp_percentage in [0.80,((0.80-0.25)*0.75+0.25),((0.80-0.25)*0.50+0.25),((0.80-0.25)*0.25+0.25),0.25]:
         asymp_cases=((active_cases)/(1-asymp_percentage))-active_cases
         west_students=asymp_cases/population*group_size
         if q==4:
-            label='Max'
+            label='Max Assumption'
             maximum_west=west_students
-        if q==3: label='Q3'
+        if q==3: label='Q3 Assumption'
         if q==2:
-            label='Med'
+            label='Med Assumption'
             med_west=west_students
-        if q==1: label='Q2'
+        if q==1: label='Q2 Assumption'
         if q==0:
-            label='Min'
+            label='Min Assumption'
             min_west=west_students
         print('----------'+label+' ('+str(asymp_percentage*100)[:4]+'%)----------\nCounty Asymp Cases:\n'+
-              str(asymp_cases)[:6]+' ('+str(asymp_cases/population*100)+'%)\n')
+              str(asymp_cases)[:6]+' ('+str(asymp_cases/population*100)[:4]+'%)\n')
         print('Asymp Ppl in Group:\n'+str(west_students)[:4]+'\n')
         q-=1 
     print('\n--------------------Summary--------------------\n'+
-         'Range of Asymp Ppl in Group:\n'+str(min_west)[:4]+' - '+str(maximum_west)[:4]+'\n\nMed of Asymp Ppl in Group:'+
+         'Range of Asymp Ppl in Group:\n'+str(min_west)[:4]+' - '+str(maximum_west)[:4]+'\n\nMed Assumption of Asymp Ppl in Group:'+
           '\n'+str(med_west)[:4])
        
 if __name__ == "__main__":
