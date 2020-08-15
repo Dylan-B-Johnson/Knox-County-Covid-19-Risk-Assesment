@@ -1,6 +1,6 @@
-# "Researchers say anywhere from 25 percent to 80 percent of people with COVID-19 are unaware they have the virus.""
+# "Researchers say anywhere from 25 percent to 80 percent of Ppl with COVID-19 are unaware they have the virus.""
 # From Healthline:
-# https://www.healthline.com/health-news/50-percent-of-people-with-covid19-not-aware-have-virus
+# https://www.healthline.com/health-news/50-percent-of-Ppl-with-covid19-not-aware-have-virus
 # Prediction  assumes the quartiles, minimum, and maximum frequency of asymptomatic carriers from the above source.
 # Prediction  assumes active cases have self-isolated 
 # Prediction  assumes the group has the same prevalence of COVID as all other groups in Knox County
@@ -16,7 +16,7 @@ import csv, io
 # Displays most of the data avaiable from Knox County's Health Department about COVID-19 and
 # breaks it down by age group, sex, and race.
 def knox_data():
-    print('\n\n--------------------Extra Data--------------------\n')
+    print('\n\n--------------------Current County Data--------------------\n')
     url = "https://covid.knoxcountytn.gov/includes/covid_summary.csv"
     content_of_csv = requests.get(url).text
     count=0
@@ -55,11 +55,11 @@ def knox_get_my_risk(group_size):
             population=int(i[1][:3]+i[1][-3:])
     print('Active Cases: ',active_cases,'\n')
     q=4
-    for asymp_percentage in [0.80,((0.80-0.25)*0.75+0.25),((0.80-0.25)*0.50+0.25),((0.80-0.25)*0.25+0.25),0.25]:
+    for asymp_percentage in [0.70,((0.70-0.25)*0.75+0.10),((0.70-0.25)*0.50+0.10),((0.70-0.25)*0.25+0.10),0.10, 0.40]:
         asymp_cases=((active_cases)/(1-asymp_percentage))-active_cases
         west_students=asymp_cases/population*group_size
         if q==4:
-            label='Max Assumption'
+            label='CDC Max Assumption'
             maximum_west=west_students
         if q==3: label='Q3 Assumption'
         if q==2:
@@ -67,15 +67,16 @@ def knox_get_my_risk(group_size):
             med_west=west_students
         if q==1: label='Q2 Assumption'
         if q==0:
-            label='Min Assumption'
+            label='CDC Min Assumption'
             min_west=west_students
-        print('----------'+label+' ('+str(asymp_percentage*100)[:4]+'%)----------\nCounty Asymp Cases:\n'+
-              str(asymp_cases)[:6]+' ('+str(asymp_cases/population*100)[:4]+'%)\n')
-        print('Asymp Ppl in Group:\n'+str(west_students)[:4]+'\n')
+        if q==-1:
+            label='CDC Current Best Assumption'
+        print('----------'+label+' ('+str(asymp_percentage*100)[:4]+'%)----------\nExpected County Asymp Cases:\n'+
+              str(asymp_cases)[:6]+' ('+str(asymp_cases/population*100)[:4]+'% of Total County Population)\n')
+        print('Expected Asymp Ppl in Group:\n'+str(west_students)[:4]+'\n')
         q-=1 
-    print('\n--------------------Summary--------------------\n'+
-         'Range of Asymp Ppl in Group:\n'+str(min_west)[:4]+' - '+str(maximum_west)[:4]+'\n\nMed Assumption of Asymp Ppl in Group:'+
-          '\n'+str(med_west)[:4])
+    print('----------Range----------\n'+
+         'Range of Expected Asymp Ppl in Group:\n'+str(min_west)[:4]+' - '+str(maximum_west)[:4])
        
 if __name__ == "__main__":
     answer=input('Group Size? Type press enter for West\'s student population.\n')
