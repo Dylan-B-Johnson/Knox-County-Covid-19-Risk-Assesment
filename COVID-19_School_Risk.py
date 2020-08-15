@@ -87,6 +87,6 @@ if __name__ == "__main__":
     answer=input('Group Size? Type press enter for West\'s student population.\n')
     knox_data()
     if answer=='':
-        knox_get_my_risk((1443-435)) # The number of West students in 2018-2019 minus the number that went online
+        knox_get_my_risk((1443-435+82)) # The number of West students in 2018-2019, minus the number that went online, plus the number of 2018-2019 teaching staff members.
     else:
         knox_get_my_risk(int(answer))
