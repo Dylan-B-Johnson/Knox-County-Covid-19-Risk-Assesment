@@ -40,7 +40,7 @@ This project scrapes its data from the Knox County Health Department at: https:/
 
 * Note: If you plan to use Python for anything else, I would recommend installing anaconda to manage your Python packages using conda environments.
 ### To Do:
-- [ ] Schedule a batch script to write and upload the daily best prediction and prediction range for the West HS and the county.
+- [ ] Schedule a batch script to write and upload the daily best prediction and prediction range for the West High School and the county.
 ### License:
 Copyright [2020] [Dylan Johnson]
 
