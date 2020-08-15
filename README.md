@@ -7,7 +7,7 @@ This project scrapes its data from the Knox County Health Department at: https:/
 Assumption Basis:
 - As of July 10, in the CDC's 5 Pandemic Scenarios (https://www.cdc.gov/coronavirus/2019-ncov/hcp/planning-scenarios.html), they describe 10% of cases being asymptomatic carriers as their lower-bound estimate, 40% as their best estimate, and 70% as their upper-bound estimate. 
 
-Prediction assumptions:
+Prediction Assumptions:
 1) This program's makes six different predictions, assuming that 10% (the given minium), 21.2% (Q1), 32.4% (Medium), 43.7% (Q3), 70.0% (the given maximum), and 40% (the best given estimate) of COVID cases are asymptomatic carriers. 
 2) The prediction assumes that active cases have self-isolated. 
 3) The prediction assumes that the group in question has the same prevalence of COVID as all other groups in Knox County.
