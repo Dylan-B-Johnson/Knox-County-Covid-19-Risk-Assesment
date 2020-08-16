@@ -6,10 +6,10 @@ This project scrapes its data from the Knox County Health Department at: https:/
 
 ###  Assumption Basis:
 * As of July 10, in the CDC's 5 Pandemic Scenarios (https://www.cdc.gov/coronavirus/2019-ncov/hcp/planning-scenarios.html), they describe 10% of cases being asymptomatic carriers as their lower-bound estimate, 40% as their best estimate, and 70% as their upper-bound estimate. 
-* Georgia Tech's COVID-19 Event Risk Assessment page (https://covid19risk.biosci.gatech.edu/) states that there are about 10x as many infections as reported cases.
+* Georgia Tech's COVID-19 Event Risk Assessment page (https://covid19risk.biosci.gatech.edu/) assumes that there are about 10-5x as many infections as reported cases.
 ### Prediction Assumptions:
 1) This program makes six different predictions, assuming that 10% (the given minium), 21.2% (Q1), 32.4% (Medium), 43.7% (Q3), 70.0% (the given maximum), and 40% (the best given estimate) of COVID infections are asymptomatic or presymptomatic carriers (see above).
-2) The prediction assumes that active cases represent only 10% of all COVID infections (see above).
+2) The prediction assumes that active cases represent only 20% of all COVID infections (see above).
 2) The prediction assumes that symptomatic carriers are self-isolating until being tested, and are thus of no concern (hopefully this is true, but it probably isn't entirely).
 3) The prediction assumes that the group in question has the same prevalence of COVID as all other groups in Knox County (this is not the reality).
 4) The prediction assumes that asymptomatic or presymptomatic carriers don't know they have the virus (this isn't necessarily true and there might be some included in the active case counts).
@@ -25,7 +25,7 @@ This project scrapes its data from the Knox County Health Department at: https:/
 * I have set up a script that runs every day at 8:30pm and updates the historical_predictions.csv file with the minimum, maximum, and best prediction of expected county and West High School asymptomatic COVID cases. This is to help place any days results in context.
 
 ### Why use this and not GA Tech's COVID-19 Event Risk Assessment Planning Tool?
-* This program should be slightly more accurate, as--unlike the COVID-19 Event Risk Assessment Planning Tool--this program has access to the exact number of active cases reported by Knox County, instead of assuming active cases are all cases reported in the last ten days (the state does not report active case counts by county, so COVID-19 Event Risk Assessment Planning Tool is unable to get this data). Because of this difference, this program is able to predict the number of asymptomatic/presymptomatic infections (who likely don't know to self-isolate), instead of all the infections (including symptomatic ones that are likely self-isolating and about to be tested).
+* This program should be slightly more accurate, as--unlike the COVID-19 Event Risk Assessment Planning Tool--this program has access to the exact number of active cases reported by Knox County, instead of assuming active cases are all cases reported in the last ten days (the state does not report active case counts by county, so COVID-19 Event Risk Assessment Planning Tool is unable to get this data). Because of this difference, this program is able to predict the number of asymptomatic/presymptomatic infections (who likely don't know to self-isolate), instead of all the infections (including symptomatic ones that are likely self-isolating and about to be tested). Additionally, this program uses an assertainment bias of 5 (their lower-bound) instead of 10, as GA Tech's assumption of 10 was from early in the pandemic when testing was much sparser. 
 
 ### To Do:
 - [ ] Make a flask web app, so that no one has to install the application.
