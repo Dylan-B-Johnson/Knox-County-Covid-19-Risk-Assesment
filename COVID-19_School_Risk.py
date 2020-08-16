@@ -61,7 +61,7 @@ def knox_get_my_risk(group_size):
     print('Active Cases: ',active_cases,'\n')
     q=4
     for asymp_percentage in [0.70,((0.70-0.25)*0.75+0.10),((0.70-0.25)*0.50+0.10),((0.70-0.25)*0.25+0.10),0.10, 0.40]:
-        total_infections=active_cases*5
+        total_infections=active_cases*2.7
         asymp_cases=total_infections*asymp_percentage
         west_students=asymp_cases/population*group_size
         if q==4:
