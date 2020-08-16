@@ -17,7 +17,7 @@ This project scrapes its data from the Knox County Health Department at: https:/
 
 
 ### Formula for Prediction:
-* Total Infections = Active Cases \* 10 (See Assumption Basis)
+* Total Infections = Active Cases \* 5 (See Assumption Basis)
 * Total Asymptomatic/Presymptomatic Infections = Total Infections \* Assumed Asymptomatic/Presymptomatic Percentage (e.g. 0.40) 
 * Predicted Asymptomatic/Presymptomatic Infections in a Group of Size N =  Total Asymptomatic/Presymptomatic Infections / Knox County's Population * N
 
