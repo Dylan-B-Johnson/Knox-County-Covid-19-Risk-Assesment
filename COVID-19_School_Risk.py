@@ -61,7 +61,8 @@ def knox_get_my_risk(group_size):
     print('Active Cases: ',active_cases,'\n')
     q=4
     for asymp_percentage in [0.70,((0.70-0.25)*0.75+0.10),((0.70-0.25)*0.50+0.10),((0.70-0.25)*0.25+0.10),0.10, 0.40]:
-        asymp_cases=((active_cases)/(1-asymp_percentage))-active_cases
+        total_infections=active_cases*10
+        asymp_cases=total_infections*asymp_percentage
         west_students=asymp_cases/population*group_size
         if q==4:
             label='CDC Max Assumption'
