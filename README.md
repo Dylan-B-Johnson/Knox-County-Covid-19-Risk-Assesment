@@ -6,21 +6,26 @@ This project scrapes its data from the Knox County Health Department at: https:/
 
 ###  Assumption Basis:
 * As of July 10, in the CDC's 5 Pandemic Scenarios (https://www.cdc.gov/coronavirus/2019-ncov/hcp/planning-scenarios.html), they describe 10% of cases being asymptomatic carriers as their lower-bound estimate, 40% as their best estimate, and 70% as their upper-bound estimate. 
-
+* Georgia Tech's COVID-19 Event Risk Assessment page (https://covid19risk.biosci.gatech.edu/) states that there are about 10x as many infections as reported cases.
 ### Prediction Assumptions:
-1) This program makes six different predictions, assuming that 10% (the given minium), 21.2% (Q1), 32.4% (Medium), 43.7% (Q3), 70.0% (the given maximum), and 40% (the best given estimate) of COVID cases are asymptomatic carriers. 
-2) The prediction assumes that active cases have self-isolated and are therefore of no concern.
-3) The prediction assumes that the group in question has the same prevalence of COVID as all other groups in Knox County.
-4) The prediction assumes that asymptomatic carriers don't know they have the virus. 
+1) This program makes six different predictions, assuming that 10% (the given minium), 21.2% (Q1), 32.4% (Medium), 43.7% (Q3), 70.0% (the given maximum), and 40% (the best given estimate) of COVID infections are asymptomatic or presymptomatic carriers (see above).
+2) The prediction assumes that active cases represent only 10% of all COVID infections (see above).
+2) The prediction assumes that symptomatic carriers are self-isolating until being tested, and are thus of no concern (hopefully this is true, but it probably isn't entirely).
+3) The prediction assumes that the group in question has the same prevalence of COVID as all other groups in Knox County (this is not the reality).
+4) The prediction assumes that asymptomatic or presymptomatic carriers don't know they have the virus (this isn't necessarily true and there might be some included in the active case counts).
 5) If applicable, the prediction assumes that the population of West High School is 1090 people (1443 students + 82 teaching staff - 435 students that chose the online option). The student and teaching staff numbers are for the 2018-2019 school year from https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=4702220&SchoolPageNum=6&ID=470222000822.
-* Note: The CDC's estimates are for asymptomatic carriers, not all those that don't know they have the virus, which would include presymptomatic cariers, so these predictions might be a bit lower than they should be.
+
 
 ### Formula for Prediction:
-* Predicted Total Asymptomatic Cases in the County = ((Current Active Cases)/(1-Assumed Asymptomatic Carrier Percentage (as a decimal)))-Current Active Cases
-* Predicted Asymptomatic Cases in a Group of Size N = Predicted Total Asymptomatic Cases in the County/Current County Population\*N
+* Total Infections = Active Cases \* 10 (See Assumption Basis)
+* Total Asymptomatic/Presymptomatic Infections = Total Infections \* Assumed Asymptomatic/Presymptomatic Percentage (e.g. 0.40) 
+* Predicted Asymptomatic/Presymptomatic Infections in a Group of Size N =  Total Asymptomatic/Presymptomatic Infections / Knox County's Population * N
 
 ### Historical Predictions:
 * I have set up a script that runs every day at 8:30pm and updates the historical_predictions.csv file with the minimum, maximum, and best prediction of expected county and West High School asymptomatic COVID cases. This is to help place any days results in context.
+
+### Why use this and not GA Tech's COVID-19 Event Risk Assessment Planning Tool?
+* This program should be slightly more accurate, as--unlike the COVID-19 Event Risk Assessment Planning Tool--this program has access to the exact number of active cases reported by Knox County, instead of assuming active cases are all cases reported in the last ten days (the state does not report active case counts by county, so COVID-19 Event Risk Assessment Planning Tool is unable to get this data). Because of this difference, this program is able to predict the number of asymptomatic/presymptomatic infections (who likely don't know to self-isolate), instead of all the infections (including symptomatic ones that are likely self-isolating and about to be tested).
 
 ### Dependencies:
 * requests 
