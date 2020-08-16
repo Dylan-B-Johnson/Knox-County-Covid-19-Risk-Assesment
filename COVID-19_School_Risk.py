@@ -77,12 +77,12 @@ def knox_get_my_risk(group_size):
             min_west=west_students
         if q==-1:
             label='CDC Current Best Assumption'
-        print('----------'+label+' ('+str(asymp_percentage*100)[:4]+'%)----------\nExpected County Asymp Cases:\n'+
+        print('----------'+label+' ('+str(asymp_percentage*100)[:4]+'%)----------\nExpected County Asymp\Presymp Infections:\n'+
               str(asymp_cases)[:6]+' ('+str(asymp_cases/population*100)[:4]+'% of Total County Population)\n')
-        print('Expected Asymp Ppl in Group:\n'+str(west_students)[:4]+'\n')
+        print('Expected Asymp\Presymp Ppl in Group:\n'+str(west_students)[:4]+'\n')
         q-=1 
     print('----------Range----------\n'+
-         'Range of Expected Asymp Ppl in Group:\n'+str(min_west)[:4]+' - '+str(maximum_west)[:4])
+         'Range of Expected Asymp\Presymp Ppl in Group:\n'+str(min_west)[:4]+' - '+str(maximum_west)[:4])
        
 if __name__ == "__main__":
     answer=input('Group Size? Type press enter for West\'s student population.\n')
