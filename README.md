@@ -1,6 +1,6 @@
 # COVID-19 Risk Assesment for Knox County
 COVID-19_School_Risk.py allows you to view the latest Knox County COVID-19 data, as well as calculate the expected number of people in a 
-group of a given size that would have COVID-19 and be asymptomatic/presymptomatic.
+group of a given size that would have COVID-19 and be asymptomatic/presymptomatic. Alternatively, you can use the daily_risk.csv to search up the expected number of people in a group of a given size that would have COVID-19 and be asymptomatic/presymptomatic without using the program.
 
 This project scrapes its data from the Knox County Health Department at: https://covid.knoxcountytn.gov/case-count.html at the time the program is run.
 
@@ -21,14 +21,14 @@ This project scrapes its data from the Knox County Health Department at: https:/
 * Total Asymptomatic/Presymptomatic Infections = Total Infections \* Assumed Asymptomatic/Presymptomatic Percentage (e.g. 0.40) 
 * Predicted Asymptomatic/Presymptomatic Infections in a Group of Size N =  Total Asymptomatic/Presymptomatic Infections / Knox County's Population * N
 
+### daily_risk.csv
+* This is the simplest way to get a result, as it does not require downloading the program and installing Python. Simpily download or click on the daily_risk.csv and search for the group size with command/control F and typing in the group size. The only prediction result provided here is based on the CDC's best estimate of the prevalence of asymptomatic/presymptomatic infections (40% of all infections).
+
 ### Historical Predictions:
 * I have set up a script that runs every day at 8:30pm and updates the historical_predictions.csv file with the minimum, maximum, and best prediction of expected county and West High School asymptomatic COVID cases. This is to help place any days results in context.
 
 ### Why use this and not GA Tech's COVID-19 Event Risk Assessment Planning Tool?
 * This program should be more accurate for a number of reasons. The COVID-19 Event Risk Assessment Planning Tool does not have access to the exact number of active cases reported by Knox County, and instead assumes that active cases are all cases reported in the last ten days (the state does not report active case counts by county, so the COVID-19 Event Risk Assessment Planning Tool is unable to get this data). Additionally, this program uses CDC estimates to predict the number of asymptomatic/presymptomatic infections (who likely don't know to self-isolate), instead of all the infections (including symptomatic ones that are likely self-isolating and about to be tested). And finaly, this program uses an assertainment bias of 2.7, which is roughly equivlant to the COVID-19 Event Risk Assessment Planning's assertainment bias, but scaled down proportionlly to the increase in testing since the COVID-19 Event Risk Assessment Planning was created.
-
-### To Do:
-- [ ] Make a flask web app, so that no one has to install the application.
 
 ### Dependencies:
 * requests 
