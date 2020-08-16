@@ -40,7 +40,7 @@ This project scrapes its data from the Knox County Health Department at: https:/
 
 * Note: If you plan to use Python for anything else, I would recommend installing anaconda to manage your Python packages using conda environments.
 ### Historical Predictions:
-I have set up a script that runs every day at 8:30pm and updates the historical_predictions.csv file with the minimum, maximum, and best prediction of expected county and West High School asymptomatic COVID cases. This is to help place any days results in context.
+* I have set up a script that runs every day at 8:30pm and updates the historical_predictions.csv file with the minimum, maximum, and best prediction of expected county and West High School asymptomatic COVID cases. This is to help place any days results in context.
 ### License:
 Copyright [2020] [Dylan Johnson]
 
