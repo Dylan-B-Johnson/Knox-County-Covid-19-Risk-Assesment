@@ -35,9 +35,9 @@ The COVID-19 Event Risk Assessment Planning Tool also does not have access to th
 * requests 
 
 ### To Do:
-[ ] Predict West's expected cases based on the group's ages.
-[ ] Place this new West at the top of the CSVs.
-[ ] Update assumptions and formulas.
+- [ ] Predict West's expected cases based on the group's ages.
+- [ ] Place this new West at the top of the CSVs.
+- [ ] Update assumptions and formulas.
 
 ### To Install on Windows: 
 1) Download and install the latest version of Python (https://www.python.org/downloads/), checking the "Add to PATH" option on install. This WILL NOT WORK if you have not checked the "Add to PATH" option, which is not checked by default.
