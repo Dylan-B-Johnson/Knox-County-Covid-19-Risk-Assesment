@@ -19,6 +19,9 @@ This project scrapes its data from the Knox County Health Department at: https:/
 * Predicted Total Asymptomatic Cases in the County = ((Current Active Cases)/(1-Assumed Asymptomatic Carrier Percentage (as a decimal)))-Current Active Cases
 * Predicted Asymptomatic Cases in a Group of Size N = Predicted Total Asymptomatic Cases in the County/Current County Population\*N
 
+### Historical Predictions:
+* I have set up a script that runs every day at 8:30pm and updates the historical_predictions.csv file with the minimum, maximum, and best prediction of expected county and West High School asymptomatic COVID cases. This is to help place any days results in context.
+
 ### Dependencies:
 * requests 
 
@@ -39,8 +42,7 @@ This project scrapes its data from the Knox County Health Department at: https:/
 6) You can now check up on the data and enter any group size you want by simpily double clicking on the COVID-19_School_Risk.py file (if this asks for an application to open it with select Python3.8).
 
 * Note: If you plan to use Python for anything else, I would recommend installing anaconda to manage your Python packages using conda environments.
-### Historical Predictions:
-* I have set up a script that runs every day at 8:30pm and updates the historical_predictions.csv file with the minimum, maximum, and best prediction of expected county and West High School asymptomatic COVID cases. This is to help place any days results in context.
+
 ### License:
 Copyright [2020] [Dylan Johnson]
 
