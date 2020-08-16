@@ -6,18 +6,18 @@ This project scrapes its data from the Knox County Health Department at: https:/
 
 ###  Assumption Basis:
 * As of July 10, in the CDC's 5 Pandemic Scenarios (https://www.cdc.gov/coronavirus/2019-ncov/hcp/planning-scenarios.html), they describe 10% of cases being asymptomatic carriers as their lower-bound estimate, 40% as their best estimate, and 70% as their upper-bound estimate. 
-* Georgia Tech's COVID-19 Event Risk Assessment page (https://covid19risk.biosci.gatech.edu/) assumes that there are about 10-5x as many infections as reported cases.
+* Georgia Tech's COVID-19 Event Risk Assessment page (https://covid19risk.biosci.gatech.edu/) made around March 13th assumes that there are about 10x as many infections as reported cases. During the week of March 13th, 69,383 total tests were preformed in the US; during the week of August 8th, 256,042 total tests were preformed in the US (https://www.cdc.gov/coronavirus/2019-ncov/covid-data/covidview/08142020/public-health-lab.html). Assuming that the ascertainment bias (proportion of infections that are not reported as cases) decreases proportionally to the growth in testing, we would expect a reduction in ascertainment bias by a factor of 3.69 (256,042/69,383). As such, we will use GA Tech's assumption of an ascertainment bias of 10 and scale it down to 2.7 (10/3.69).
+
 ### Prediction Assumptions:
 1) This program makes six different predictions, assuming that 10% (the given minium), 21.2% (Q1), 32.4% (Medium), 43.7% (Q3), 70.0% (the given maximum), and 40% (the best given estimate) of COVID infections are asymptomatic or presymptomatic carriers (see above).
-2) The prediction assumes that active cases represent only 20% of all COVID infections (see above).
+2) The prediction assumes an ascertainment bias (proportion of infections that are not reported as cases) of 2.7 (see above).
 2) The prediction assumes that symptomatic carriers are self-isolating until being tested, and are thus of no concern (hopefully this is true, but it probably isn't entirely).
 3) The prediction assumes that the group in question has the same prevalence of COVID as all other groups in Knox County (this is not the reality).
 4) The prediction assumes that asymptomatic or presymptomatic carriers don't know they have the virus (this isn't necessarily true and there might be some included in the active case counts).
 5) If applicable, the prediction assumes that the population of West High School is 1090 people (1443 students + 82 teaching staff - 435 students that chose the online option). The student and teaching staff numbers are for the 2018-2019 school year from https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=4702220&SchoolPageNum=6&ID=470222000822.
 
-
 ### Formula for Prediction:
-* Total Infections = Active Cases \* 5 (See Assumption Basis)
+* Total Infections = Active Cases \* 2.7 (See Assumption Basis)
 * Total Asymptomatic/Presymptomatic Infections = Total Infections \* Assumed Asymptomatic/Presymptomatic Percentage (e.g. 0.40) 
 * Predicted Asymptomatic/Presymptomatic Infections in a Group of Size N =  Total Asymptomatic/Presymptomatic Infections / Knox County's Population * N
 
