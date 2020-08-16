@@ -22,7 +22,7 @@ This project scrapes its data from the Knox County Health Department at: https:/
 * Predicted Asymptomatic/Presymptomatic Infections in a Group of Size N =  Total Asymptomatic/Presymptomatic Infections / Knox County's Population * N
 
 ### daily_risk.csv
-* This is the simplest way to get a result, as it does not require downloading the program and installing Python. Simpily download or click on the daily_risk.csv and search for the group size with command/control F and typing in the group size. The only prediction result provided here is based on the CDC's best estimate of the prevalence of asymptomatic/presymptomatic infections (40% of all infections).
+* This is the simplest way to get a result, as it does not require downloading the program and installing Python. Simpily download or click on the daily_risk.csv and search for the group size with command/control F and typing in the group size the "Best Asymp/Presymp Estimate" column shows the best estimate for the expected number of people in a group of the given size on the left that would have COVID-19 and be asymptomatic/presymptomatic.
 
 ### Historical Predictions:
 * I have set up a script that runs every day at 8:30pm and updates the historical_predictions.csv file with the minimum, maximum, and best prediction of expected county and West High School asymptomatic COVID cases. This is to help place any days results in context.
