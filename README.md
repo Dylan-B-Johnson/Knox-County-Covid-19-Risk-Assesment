@@ -20,7 +20,7 @@ This project scrapes its data from the Knox County Health Department at: https:/
 * Total Asymptomatic/Presymptomatic Infections = Total Infections \* Assumed Asymptomatic/Presymptomatic Percentage (e.g. 0.40) 
 * Predicted Asymptomatic/Presymptomatic Infections in a Group of Size N =  Total Asymptomatic/Presymptomatic Infections / Knox County's Population \* N
 
-### West High School Model Rational
+### The West High School Model Rational
 * The West High School model was designed to capture the fact that as of 8/17/2020 people under the age of 18 have made up only ~10% of Knox County COVID-19 Cases, while adults 18-64 have made up ~80% of COVID-19 Cases. As such, this model should be more accurate for West High School with its large number of students. This model will also--at least initially--predict much fewer asymp. / presymp. infections than the normal one. This might change as schools reopen and the minor cases become a larger proportion of all Knox County Cases.
 
 ### Extra West Model Assumptions
