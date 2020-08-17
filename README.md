@@ -56,10 +56,6 @@ The COVID-19 Event Risk Assessment Planning Tool also does not have access to th
 ### Dependencies:
 * requests 
 
-### To Do:
-- [ ] Predict West's expected cases based on the group's ages.
-- [ ] Update assumptions and formulas.
-
 ### To Install on Windows: 
 1) Download and install the latest version of Python (https://www.python.org/downloads/), checking the "Add to PATH" option on install. This WILL NOT WORK if you have not checked the "Add to PATH" option, which is not checked by default.
 2) Download COVID-19_School_Risk.py and install.bat
