@@ -42,7 +42,25 @@ def knox_data():
 
 # Using a given group size this calculates and displays the expected number of people 
 # in that group that have COVID-19 in Knox County, Tennessee
-def knox_get_my_risk(group_size):
+def knox_get_my_risk(group_size, is_west):
+    
+    #gets percent of total cases that are minors and adaults 18-64
+    if is_west:
+        url = "https://covid.knoxcountytn.gov/includes/covid_summary.csv"
+        content_of_csv = requests.get(url).text
+    
+        for i in csv.reader(io.StringIO(content_of_csv)):
+            if i[0]=='0-17':
+                minor_cases=int(i[2])
+            if i[0]=='18-44':
+                adault_to_44_cases=int(i[2])
+            if i[0]=='45-64':
+                adault_to_64_cases=int(i[2])
+            if i[0]=='Total':
+                total_cases_real=int(i[2])
+        west_teacher_percent=(adault_to_64_cases+adault_to_44_cases)/total_cases_real
+        west_student_percent=minor_cases/total_cases_real
+    
     print('\n\n--------------------Group COVID Risk--------------------\n')
     url = "https://covid.knoxcountytn.gov/includes/covid_cases.csv"
     content_of_csv = requests.get(url).text
@@ -61,7 +79,10 @@ def knox_get_my_risk(group_size):
     for asymp_percentage in [0.70,((0.70-0.25)*0.75+0.10),((0.70-0.25)*0.50+0.10),((0.70-0.25)*0.25+0.10),0.10, 0.40]:
         total_infections=active_cases*2.7
         asymp_cases=total_infections*asymp_percentage
-        west_students=asymp_cases/population*group_size
+        if is_west:
+            west_students=asymp_cases/population*(1443-435)*west_student_percent+asymp_cases/population*82*west_teacher_percent
+        else:
+            west_students=asymp_cases/population*group_size
         if q==4:
             label='CDC Max Assumption'
             maximum_west=west_students
@@ -86,6 +107,6 @@ if __name__ == "__main__":
     answer=input('Group Size? Type press enter for West\'s student population.\n')
     knox_data()
     if answer=='':
-        knox_get_my_risk((1443-435+82)) # The number of West students in 2018-2019, minus the number that went online, plus the number of 2018-2019 teaching staff members.
+        knox_get_my_risk((1443-435+82),True) # The number of West students in 2018-2019, minus the number that went online, plus the number of 2018-2019 teaching staff members.
     else:
-        knox_get_my_risk(int(answer))
+        knox_get_my_risk(int(answer),False)
