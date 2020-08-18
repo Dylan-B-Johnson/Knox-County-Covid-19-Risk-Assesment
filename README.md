@@ -21,23 +21,24 @@ This project scrapes its data from the Knox County Health Department at: https:/
 * Predicted Asymptomatic/Presymptomatic Infections in a Group of Size N =  Total Asymptomatic/Presymptomatic Infections / Knox County's Population \* N
 
 ### The West High School Model Rational
-* The West High School model was designed to capture the fact that as of 8/17/2020 people under the age of 18 have made up only ~10% of Knox County COVID-19 Cases, while adults 18-64 have made up ~80% of COVID-19 Cases. As such, this model should be more accurate for West High School with its large number of students. This model will also--at least initially--predict much fewer asymp. / presymp. infections than the normal one. This might change as schools reopen and the minor cases become a larger proportion of all Knox County Cases.
+* The West High School model was designed to capture the fact that as of 8/17/2020 people under the age of 18 have had ~60 cases per 10,000 minors, while adults 18-64 have had ~150 cases per 10,000 18-64 year-old adults. As such, this model should be more accurate for West High School with its large number of minors. This model will also--at least initially--predict much fewer asymp. / presymp. infections than the normal one. This might change as schools reopen and the minor cases go up.
 
 ### Extra West Model Assumptions
-6)he prediction assumes that the population of West High School is 1090 people (1443 students + 82 teaching staff - 435 students that chose the online option). The student and teaching staff numbers are for the 2018-2019 school year from https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=4702220&SchoolPageNum=6&ID=470222000822.
+6) The prediction assumes that the population of West High School is 1090 people (1443 students + 82 teaching staff - 435 students that chose the online option). The student and teaching staff numbers are for the 2018-2019 school year from https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=4702220&SchoolPageNum=6&ID=470222000822.
 7) The West HS model does NOT assume that the group in question has the same prevalence of COVID as all other groups in Knox County.
-8) The West HS model assumes that the only factor that affects a group's prevalence of COVID is age (this is obviously not true, but we think that this is most closely tied to behavior and therefore likelihood of having COVID-19.
-9) The West HS model assumes that all teachers are between the ages of 18-64 (probably not true).
-10) The West HS model assumes that all students are bteween the ages of 0-17 (basically true).
+8) The West HS model assumes that the only factor that affects a group's prevalence of COVID is age (this is obviously not true, but I think that--of the variables we have--this is most closely tied to behavior and therefore likelihood of having COVID-19).
+9) The West HS model assumes that all teachers are between the ages of 18-64 (probably some outliers here).
+10) The West HS model assumes that all students are between the ages of 0-17 (basically true).
 11) Other than assumption #4, the West HS model assumes all assumptions previous assumptions (#1-3 and #5).
 
 ### West HS Model:
 * Total Infections = Active Cases \* 2.7 (The Ascertainment Bias: See Assumption Basis)
 * Total Asymptomatic/Presymptomatic Infections = Total Infections \* Assumed Asymptomatic/Presymptomatic Percentage (e.g. 0.40) 
-* Student Infection Likelihood = Total 0-17 Year-old Cases / Total Knox County Cases
+* Student Infection Likelihood = Total 0-17 Year-old Cases per 10,000 Minors / Total Knox County Cases per 10,000 People
 * Predicted Student Asymptomatic/Presymptomatic Infections = Total Asymptomatic/Presymptomatic Infections / Knox County's Population \* \# of In-Person Students (1008) * Student Infection Likelihood
-* Teacher Infection Likelihood = (Total 18-44 Year-old Cases + Total 44-64 Year-old Cases) / Total Knox County Cases
+* Teacher Infection Likelihood = (Total 18-44 Year-old Cases per 10,000 in Group + Total 45-64 Year-old Cases per 10,000 in Group) / (2\*Total Knox County Cases per 10,000 People)
 * Predicted Teacher Asymptomatic/Presymptomatic Infections = Total Asymptomatic/Presymptomatic Infections / Knox County's Population \* \# of Teachers (82) * Teacher Infection Likelihood
+* Predicted West Asymptomatic/Presymptomatic Infections = Predicted Teacher Asymptomatic/Presymptomatic Infections + Predicted Student Asymptomatic/Presymptomatic Infections
 
 ### How to Use Without Installing
 * daily_risk.csv, daily_risk_lite.csv, and daily_risk_mobile.csv are the simplest ways to get a result, as they does not require downloading the program and installing Python. Simpily download or click on one of daily_risk.csv files\* and search for the group size with command/control F and typing in the group size the "Best Asymp/Presymp Estimate" column shows the best estimate for the expected number of people in a group of the given size on the left that would have COVID-19 and be asymptomatic/presymptomatic. These tables are updated everyday automatically at 11am.
@@ -48,6 +49,12 @@ This project scrapes its data from the Knox County Health Department at: https:/
 
 ### Historical Data:
 * All folders that start with "hist" have CSVs of every peice of data avaiable from Knox County's over time (named by their date). This data is updated automatically at 11am.
+
+### To Do:
+- [] Impliment new West model
+- [] Make historical redictions match
+- [] Make CSV for schools of any size
+- [] Make program for schools of any size
 
 ### Dependencies:
 * requests 
