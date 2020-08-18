@@ -45,7 +45,7 @@ This project scrapes its data from the Knox County Health Department at: https:/
 * \*Note: daily_risk_lite.csv has fewer group sizes (up to 2999) for slow computers and people that aren't planning for thousands of people, and daily_risk_mobile.csv has even fewer group sizes (up to 1099) for people on phones.
 
 ### Historical Predictions:
-* I have set up a script that runs every day at 11am and updates the historical_predictions.csv file with the minimum, maximum, and best prediction of expected county and West High School asymptomatic COVID cases. This is to help place any days results in context.
+* I have set up a script that runs every day at 11am and updates the historical_predictions.csv file with the minimum, maximum, and best prediction of expected county and West High School asymptomatic COVID cases. This is to help place any day's results in context.
 
 ### Historical Data:
 * All folders that start with "hist" have CSVs of every peice of data avaiable from Knox County's over time (named by their date). This data is updated automatically at 11am.
@@ -61,10 +61,10 @@ This project scrapes its data from the Knox County Health Department at: https:/
 
 ### To Install on Windows: 
 1) Download and install the latest version of Python (https://www.python.org/downloads/), checking the "Add to PATH" option on install. This WILL NOT WORK if you have not checked the "Add to PATH" option, which is not checked by default.
-2) Download COVID-19_School_Risk.py and install.bat
-3) Run the install.bat file (by double clicking on it).
-4) Press the "y" key when prompted.
-5) If this worked you can delete the install.bat file.
+2) Download COVID-19_School_Risk.py
+3) Press the Windows key and type "cmd" in the Windows search box. Press enter to open Command Prompt.
+4) Type '`pip install requests`' and press enter. 
+5) Press the "y" key when prompted.
 6) You can now check up on the data and enter any group size you want by simpily double clicking on the COVID-19_School_Risk.py file (if this asks for an application to open it with select Python3.8).
 
 ### To Install on Mac OS:

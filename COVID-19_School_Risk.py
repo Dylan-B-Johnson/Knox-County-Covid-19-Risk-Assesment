@@ -42,24 +42,28 @@ def knox_data():
 
 # Using a given group size this calculates and displays the expected number of people 
 # in that group that have COVID-19 in Knox County, Tennessee
-def knox_get_my_risk(group_size, is_west):
+def knox_get_my_risk(is_school, group_size=None, teachers=None, students=None):
     
     #gets percent of total cases that are minors and adaults 18-64
-    if is_west:
+    if is_school:
         url = "https://covid.knoxcountytn.gov/includes/covid_summary.csv"
         content_of_csv = requests.get(url).text
     
         for i in csv.reader(io.StringIO(content_of_csv)):
             if i[0]=='0-17':
-                minor_cases=int(i[2])
+                #minor_cases=int(i[2])
+                minor_cases_per_ten_k=float(i[3])
             if i[0]=='18-44':
-                adault_to_44_cases=int(i[2])
+                #adault_to_44_cases=int(i[2])
+                adault_to_44_cases_per_ten_k=float(i[3])
             if i[0]=='45-64':
-                adault_to_64_cases=int(i[2])
+                adault_to_64_cases_per_ten_k=float(i[3])
+                #adault_to_64_cases=int(i[2])
             if i[0]=='Total':
-                total_cases_real=int(i[2])
-        west_teacher_percent=(adault_to_64_cases+adault_to_44_cases)/total_cases_real
-        west_student_percent=minor_cases/total_cases_real
+                total_cases_per_ten_k=float(i[3])
+                #total_cases_real=int(i[2])
+        teacher_percent=(adault_to_64_cases_per_ten_k+adault_to_44_cases_per_ten_k)/(2*total_cases_per_ten_k)
+        student_percent=minor_cases_per_ten_k/total_cases_per_ten_k
     
     print('\n\n--------------------Group COVID Risk--------------------\n')
     url = "https://covid.knoxcountytn.gov/includes/covid_cases.csv"
@@ -78,35 +82,46 @@ def knox_get_my_risk(group_size, is_west):
     q=4
     for asymp_percentage in [0.70,((0.70-0.25)*0.75+0.10),((0.70-0.25)*0.50+0.10),((0.70-0.25)*0.25+0.10),0.10, 0.40]:
         total_infections=active_cases*2.7
-        asymp_cases=total_infections*asymp_percentage
-        if is_west:
-            west_students=asymp_cases/population*(1443-435)*west_student_percent+asymp_cases/population*82*west_teacher_percent
+        asymp_infections=total_infections*asymp_percentage
+        if is_school:
+            expect_asymp_infect=asymp_infections/population*students*student_percent+asymp_infections/population*teachers*teacher_percent
         else:
-            west_students=asymp_cases/population*group_size
+            expect_asymp_infect=asymp_infections/population*group_size
         if q==4:
             label='CDC Max Assumption'
-            maximum_west=west_students
+            maximum_west=expect_asymp_infect
         if q==3: label='Q3 Assumption'
         if q==2:
             label='Med Assumption'
-            med_west=west_students
+            med_west=expect_asymp_infect
         if q==1: label='Q1 Assumption'
         if q==0:
             label='CDC Min Assumption'
-            min_west=west_students
+            min_west=expect_asymp_infect
         if q==-1:
             label='CDC Current Best Assumption'
         print('----------'+label+' ('+str(asymp_percentage*100)[:4]+'%)----------\nExpected County Asymp\Presymp Infections:\n'+
-              str(asymp_cases)[:6]+' ('+str(asymp_cases/population*100)[:4]+'% of Total County Population)\n')
-        print('Expected Asymp\Presymp Ppl in Group:\n'+str(west_students)[:4]+'\n')
+              str(asymp_infections)[:6]+' ('+str(asymp_infections/population*100)[:4]+'% of Total County Population)\n')
+        print('Expected Asymp\Presymp Ppl in Group:\n'+str(expect_asymp_infect)[:4]+'\n')
         q-=1 
     print('----------Range----------\n'+
          'Range of Expected Asymp\Presymp Ppl in Group:\n'+str(min_west)[:4]+' - '+str(maximum_west)[:4])
        
 if __name__ == "__main__":
-    answer=input('Group Size? Type press enter for West\'s student population.\n')
-    knox_data()
-    if answer=='':
-        knox_get_my_risk((1443-435+82),True) # The number of West students in 2018-2019, minus the number that went online, plus the number of 2018-2019 teaching staff members.
+
+    ans_school=input('Is the group a elementary, middle, or high school? (Type "y" if yes, otherwise, press enter.)\n')
+    if ans_school=='Y' or ans_school=='y':
+        ans_school_west=input('Is this school West High School? (Type "y" if yes, otherwise, press enter.)\n')
+        if ans_school_west=='Y' or ans_school_west=='y':
+            knox_data()
+            knox_get_my_risk(True,teachers=82, students=(1443-435)) 
+        else:
+            teacher_num=input('Enter the number of teachers at this school:\n')
+            student_num=input('Enter the number of students at this school:\n')
+            knox_data()
+            knox_get_my_risk(True,teachers=int(teacher_num),students=int(student_num))
     else:
-        knox_get_my_risk(int(answer),False)
+        size_ans=input('Please enter this group\'s size.\n')
+        knox_data()
+        knox_get_my_risk(False,group_size=int(size_ans))
+                 
