@@ -51,12 +51,6 @@ This project scrapes its data from the Knox County Health Department at: https:/
 ### Historical Data:
 * All folders that start with "hist" have CSVs of every peice of data avaiable from Knox County's over time (named by their date). This data is updated automatically at 11am.
 
-### To Do:
-- [] Impliment new West model
-- [] Make historical redictions match
-- [] Make CSV for schools of any size
-- [] Make program for schools of any size
-
 ### Dependencies:
 * requests 
 
