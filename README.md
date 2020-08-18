@@ -49,10 +49,6 @@ This project scrapes its data from the Knox County Health Department at: https:/
 ### Historical Data:
 * All folders that start with "hist" have CSVs of every peice of data avaiable from Knox County's over time (named by their date). This data is updated automatically at 11am.
 
-### Why use this and not GA Tech's COVID-19 Event Risk Assessment Planning Tool?
-* This program should be more accurate for a number of reasons. The biggest reason is that the COVID-19 Event Risk Assessment Planning Tool was made early in the pandemic and still uses an assertainment bias consistent with that time (it was last updated 5 months ago). This program uses an assertainment bias of 2.7, which is roughly equivlant to the COVID-19 Event Risk Assessment Planning's assertainment bias, but scaled down proportionlly to the increase in testing since the COVID-19 Event Risk Assessment Planning was created.
-The COVID-19 Event Risk Assessment Planning Tool also does not have access to the exact number of active cases reported by Knox County, and instead assumes that active cases are all cases reported in the last ten days (the state does not report active case counts by county, so the COVID-19 Event Risk Assessment Planning Tool is unable to get this data). Additionally, this program uses CDC estimates to predict the number of asymptomatic/presymptomatic infections (who likely don't know to self-isolate), instead of all the infections (including symptomatic ones that are likely self-isolating and about to be tested). Additionally--at least for West--this model takes into consideration the age of the population of West, instead of assuming all groups are equivalent. Despite all of this, though, this model is still really just a shot in the dark, but hopefully it is useful in judging relative risk over time.
-
 ### Dependencies:
 * requests 
 
