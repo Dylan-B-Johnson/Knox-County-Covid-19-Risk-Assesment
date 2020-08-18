@@ -1,6 +1,6 @@
 # COVID-19 Risk Assesment for Knox County
 COVID-19_School_Risk.py allows you to view the latest Knox County COVID-19 data, as well as calculate the expected number of people in a 
-group of a given size that would have COVID-19 and be asymptomatic/presymptomatic. Alternatively, you can use the daily_risk.csv to search up the expected number of people in a group of a given size that would have COVID-19 and be asymptomatic/presymptomatic without using the program.
+group or school of a given size that would have COVID-19 and be asymptomatic/presymptomatic. Alternatively, you can use the daily_risk.csv to search up the expected number of people in a group of a given size that would have COVID-19 and be asymptomatic/presymptomatic without using the program. daily_school_risk_huge.csv can also be used to apply the West High School Model to a school of a different size, but this file is big and it would have to be viewed in Excel (it also would be a pain to search through to the right combination of teachers and students).
 
 This project scrapes its data from the Knox County Health Department at: https://covid.knoxcountytn.gov/case-count.html at the time the program is run.
 
@@ -21,7 +21,7 @@ This project scrapes its data from the Knox County Health Department at: https:/
 * Predicted Asymptomatic/Presymptomatic Infections in a Group of Size N =  Total Asymptomatic/Presymptomatic Infections / Knox County's Population \* N
 
 ### The West High School Model Rational
-* The West High School model was designed to capture the fact that as of 8/17/2020 people under the age of 18 have had ~60 cases per 10,000 minors, while adults 18-64 have had ~150 cases per 10,000 18-64 year-old adults. As such, this model should be more accurate for West High School with its large number of minors. This model will also--at least initially--predict much fewer asymp. / presymp. infections than the normal one. This might change as schools reopen and the minor cases go up.
+* The West High School model was designed to capture the fact that as of 8/17/2020 people under the age of 18 have had ~60 cases per 10,000 minors, while adults 18-64 have had ~150 cases per 10,000 18-64 year-old adults. As such, this model should be more accurate for West High School with its large number of minors. This model will also--at least initially--predict much fewer asymp. / presymp. infections than the normal one. This might change as schools reopen and the minor cases go up. This model is also used for school predictions of sizes other than West in both the program and the daily_school_risk_huge.csv file.
 
 ### Extra West Model Assumptions
 6) The prediction assumes that the population of West High School is 1090 people (1443 students + 82 teaching staff - 435 students that chose the online option). The student and teaching staff numbers are for the 2018-2019 school year from https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=4702220&SchoolPageNum=6&ID=470222000822.
