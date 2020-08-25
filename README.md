@@ -51,6 +51,9 @@ This project scrapes its data from the Knox County Health Department at: https:/
 ### Historical Data:
 * All folders that start with "hist" have CSVs of every peice of data avaiable from Knox County's over time (named by their date). This data is updated automatically at 4pm.
 
+### To Do:
+- [] I just found out that the actual number of students and staff at West High School is listed on the bottom of the main page on West's website. As such, I will update the program, as well as recalculate the historical predictions to reflect these new numbers. These new numbers are larger than the previous numbers, and, as such, will increase the expected risk.
+
 ### Dependencies:
 * requests 
 
