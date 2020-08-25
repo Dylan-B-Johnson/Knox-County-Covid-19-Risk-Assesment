@@ -42,14 +42,14 @@ This project scrapes its data from the Knox County Health Department at: https:/
 * \* Note: The West HS Model is also used if you respond that your group is a school, or if you search through the daily_school_risk_huge.csv file for a prediction.
 
 ### How to Use Without Installing
-* daily_risk.csv, daily_risk_lite.csv, and daily_risk_mobile.csv are the simplest ways to get a result, as they does not require downloading the program and installing Python. Simpily download or click on one of daily_risk.csv files\* and search for the group size with command/control F and typing in the group size the "Best Asymp/Presymp Estimate" column shows the best estimate for the expected number of people in a group of the given size on the left that would have COVID-19 and be asymptomatic/presymptomatic. These tables are updated everyday automatically at 11am. The daily_school_risk_huge.csv also can be used to apply the West HS Model to different school sizes, but it is very large and will have to be opened in Excel or LibreOffice Calc.
+* daily_risk.csv, daily_risk_lite.csv, and daily_risk_mobile.csv are the simplest ways to get a result, as they does not require downloading the program and installing Python. Simpily download or click on one of daily_risk.csv files\* and search for the group size with command/control F and typing in the group size the "Best Asymp/Presymp Estimate" column shows the best estimate for the expected number of people in a group of the given size on the left that would have COVID-19 and be asymptomatic/presymptomatic. These tables are updated everyday automatically at 4pm. The daily_school_risk_huge.csv also can be used to apply the West HS Model to different school sizes, but it is very large and will have to be opened in Excel or LibreOffice Calc.
 * \*Note: daily_risk_lite.csv has fewer group sizes (up to 2999) for slow computers and people that aren't planning for thousands of people, and daily_risk_mobile.csv has even fewer group sizes (up to 1099) for people on phones.
 
 ### Historical Predictions:
-* I have set up a script that runs every day at 11am and updates the historical_predictions.csv file with the minimum, maximum, and best prediction of expected county and West High School asymptomatic COVID cases. This is to help place any day's results in context.
+* I have set up a script that runs every day at 4pm and updates the historical_predictions.csv file with the minimum, maximum, and best prediction of expected county and West High School asymptomatic COVID cases. This is to help place any day's results in context.
 
 ### Historical Data:
-* All folders that start with "hist" have CSVs of every peice of data avaiable from Knox County's over time (named by their date). This data is updated automatically at 11am.
+* All folders that start with "hist" have CSVs of every peice of data avaiable from Knox County's over time (named by their date). This data is updated automatically at 4pm.
 
 ### Dependencies:
 * requests 
