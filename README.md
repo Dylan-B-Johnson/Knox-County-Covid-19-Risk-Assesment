@@ -53,6 +53,9 @@ This project scrapes its data from the Knox County Health Department at: https:/
 
 ### To Do:
 - [ ] I just found out that the actual number of students and staff at West High School is listed on the bottom of the main page on West's website. As such, I will update the program, as well as recalculate the historical predictions to reflect these new numbers. These new numbers are larger than the previous numbers, and, as such, will increase the expected risk.
+- [ ] Add expected number of asymp./presymp. infections for a class of a given size at West (and for the program, for any school size).
+- [ ] Add expected number of asymp./presymp. infections for staff and students seperately.
+- [ ] Make function to update historical predicions based on whatever the current model is.
 
 ### Dependencies:
 * requests 
