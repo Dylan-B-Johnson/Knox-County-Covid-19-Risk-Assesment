@@ -2,6 +2,8 @@
 COVID-19_School_Risk.py allows you to view the latest Knox County COVID-19 data, as well as calculate the expected number of people in a 
 group or school of a given size that would have COVID-19 and be asymptomatic/presymptomatic. Alternatively, you can use the daily_risk.csv to search up the expected number of people in a group of a given size that would have COVID-19 and be asymptomatic/presymptomatic without using the program. daily_school_risk_huge.csv can also be used to apply the West High School Model to a school of a different size, but this file is big and it would have to be viewed in Excel (it also would be a pain to search through to the right combination of teachers and students).
 
+#Knox County recently changed the formatting of their data, so some days might error out instead of uploading. I am way too busy right now to fix this, but it is on the ToDo list.
+
 This project scrapes its data from the Knox County Health Department at: https://covid.knoxcountytn.gov/case-count.html at the time the program is run.
 
 ###  Assumption Basis:
@@ -52,6 +54,7 @@ This project scrapes its data from the Knox County Health Department at: https:/
 * All folders that start with "hist" have CSVs of every peice of data avaiable from Knox County's over time (named by their date). This data is updated automatically at 4pm.
 
 ### To Do:
+- [ ] Make every day work again.
 - [ ] Save historical Knox County School numbers from: https://datastudio.google.com/u/0/reporting/3d460c9b-1a41-4566-88b0-9264ae8c2965/page/aEpcB?feature=opengraph
 - [ ] Add new model based around these Knox County School-only numbers.
 - [ ] I just found out that the actual number of students and staff at West High School is listed on the bottom of the main page on West's website. As such, I will update the program, as well as recalculate the historical predictions to reflect these new numbers. These new numbers are larger than the previous numbers, and, as such, will increase the expected risk.
