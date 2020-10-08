@@ -61,9 +61,6 @@ This project scrapes its data from the Knox County Health Department at: https:/
 - [ ] Add expected number of asymp./presymp. infections for staff and students seperately.
 - [ ] Make function to update historical predicions based on whatever the current model is.
 
-### Dependencies:
-* requests 
-
 ### To Install on Windows: 
 1) Download and install the latest version of Python (https://www.python.org/downloads/), checking the "Add to PATH" option on install. This WILL NOT WORK if you have not checked the "Add to PATH" option, which is not checked by default.
 2) Download COVID-19_School_Risk.py
