@@ -78,7 +78,7 @@ This project scrapes its data from the Knox County Health Department at: https:/
 * Note: If you plan to use Python for anything else, I would recommend installing anaconda to manage your Python packages using conda environments.
 
 ### License:
-Copyright [2020] [Dylan Johnson]
+Copyright 2020 Dylan Johnson
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
