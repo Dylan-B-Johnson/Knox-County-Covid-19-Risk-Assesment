@@ -4,7 +4,7 @@ group or school of a given size that would have COVID-19 and be asymptomatic/pre
 This project scrapes its data from the Knox County Health Department at: https://covid.knoxcountytn.gov/case-count.html at the time the program is run.
 
 ### Days Missing:
-As of right now, data is ocassionally not updated, as the Health Depertment sometimes uploads data in a different format from the one this program was designed to accept. I plan to try and fix this issue when I have the time, but I do not right now.
+As of right now, data is ocassionally not updated, as the Health Depertment sometimes records data in a different format from the one this program was designed to accept. I plan to try and fix this issue when I have the time, but I do not right now.
 
 ###  Assumption Basis:
 * As of July 10, in the CDC's 5 Pandemic Scenarios (https://www.cdc.gov/coronavirus/2019-ncov/hcp/planning-scenarios.html), they describe 10% of cases being asymptomatic or presymptomatic carriers as their lower-bound estimate, 40% as their best estimate, and 70% as their upper-bound estimate. 
