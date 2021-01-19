@@ -112,7 +112,7 @@ def ask_loop(message, y_or_enter):
 		answer=input('\n'+message)
 		if y_or_enter and (answer=='Y' or answer=='y' or answer=='yes' or answer=='YES' or answer =='yES' or answer=='Yes' or answer=='yeS' or answer=='YeS' or answer=='yEs' or answer=='YEs'):
 			return 'y'
-		elif y_or_enter and (answer=='N' or answer=='n' or answer=='No' or answer=='NO' or answer =='nO' or answer=='no'):
+		elif y_or_enter and (answer=='N' or answer=='n' or answer=='No' or answer=='NO' or answer =='nO' or answer=='no' or answer ==''):
 			return 'n'
 		elif answer.isdigit():
 			return answer
