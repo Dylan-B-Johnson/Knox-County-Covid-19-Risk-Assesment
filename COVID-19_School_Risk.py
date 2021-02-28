@@ -283,5 +283,3 @@ if __name__ == "__main__":
 		size_ans=ask_loop('Please enter this group\'s size.\n',False)
 		knox_data()
 		knox_get_my_risk(False,group_size=int(size_ans))
-				 
->>>>>>> 94b3aea682ca9efc528050a6b3f2428459673733
