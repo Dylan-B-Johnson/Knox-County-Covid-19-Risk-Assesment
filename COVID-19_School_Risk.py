@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """
 Copyright 2020 Dylan Johnson
 
