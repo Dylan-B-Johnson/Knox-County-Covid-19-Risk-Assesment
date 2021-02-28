@@ -1,12 +1,9 @@
 """
-Copyright 2020 Dylan Johnson
-
+Copyright [2020] [Dylan Johnson]
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
-
 	http://www.apache.org/licenses/LICENSE-2.0
-
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -112,7 +109,7 @@ def ask_loop(message, y_or_enter):
 		answer=input('\n'+message)
 		if y_or_enter and (answer=='Y' or answer=='y' or answer=='yes' or answer=='YES' or answer =='yES' or answer=='Yes' or answer=='yeS' or answer=='YeS' or answer=='yEs' or answer=='YEs'):
 			return 'y'
-		elif y_or_enter and (answer=='N' or answer=='n' or answer=='No' or answer=='NO' or answer =='nO' or answer=='no' or answer ==''):
+		elif y_or_enter and (answer=='N' or answer=='n' or answer=='No' or answer=='NO' or answer =='nO' or answer=='no'):
 			return 'n'
 		elif answer.isdigit():
 			return answer
@@ -139,3 +136,4 @@ if __name__ == "__main__":
 		size_ans=ask_loop('Please enter this group\'s size.\n',False)
 		knox_data()
 		knox_get_my_risk(False,group_size=int(size_ans))
+	
