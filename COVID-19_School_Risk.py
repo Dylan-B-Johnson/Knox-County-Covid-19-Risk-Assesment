@@ -35,7 +35,7 @@ def knox_data():
 			if row[i+1]=='':
 				pass
 			else: print(row[0]+':\t'+row[i+1])
-		if cat!='': print('\n') 
+		if cat!='': print('\n')
 
 # Using a given group size this calculates and displays the expected number of people 
 # in that group that have COVID-19 in Knox County, Tennessee
