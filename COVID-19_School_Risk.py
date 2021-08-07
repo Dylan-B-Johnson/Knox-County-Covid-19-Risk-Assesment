@@ -115,7 +115,7 @@ def ask_loop(message, y_or_enter):
 			return answer
 		else:
 			if y_or_enter:
-				input('\n"'+answer+'" does not appear to be  valid response. Press any key to continue.\n')
+				return 'n'
 			else:
 				input('\n"'+answer+'" Does not appear to be  valid response. Make sure not to use any commas. Press any key to continue.\n')
 	
