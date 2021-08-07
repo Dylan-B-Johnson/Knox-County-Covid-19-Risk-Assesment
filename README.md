@@ -3,7 +3,9 @@ COVID-19_School_Risk.py allows you to view the latest Knox County COVID-19 data,
 group or school of a given size that would have COVID-19 and be asymptomatic/presymptomatic. Alternatively, you can use the daily_risk.csv to search up the expected number of people in a group of a given size that would have COVID-19 and be asymptomatic/presymptomatic without using the program. daily_school_risk_huge.csv can also be used to apply the West High School Model to a school of a different size, but this file is big and it would have to be viewed in Excel (it also would be a pain to search through to the right combination of teachers and students).
 This project scrapes its data from the Knox County Health Department at: https://covid.knoxcountytn.gov/case-count.html at the time the program is run.
 
-### THIS PROJECT IS NO LONGER UPDATED.
+### The Data Logger is not Intended for Use 
+* Right now it has personalized Windows paths (on my PC it is located in the directory above this repository), but I added it in the interest of transparency. 
+* For automatic updates, I use a seperate batch file, which runs the data logger and pushes to this Github repository automatically at 4pm (using task scheduler).
 
 ### Data Logger Fixed!
 The data logger is working again.
