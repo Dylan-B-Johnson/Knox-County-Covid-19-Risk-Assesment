@@ -55,7 +55,7 @@ This project scrapes its data from the Knox County Health Department at: https:/
 * All folders that start with "hist" have CSVs of every peice of data avaiable from Knox County's over time (named by their date). This data is updated automatically at 4pm.
 
 ### To Do:
-- [ ] Change 40% asymp. best estimate to 30%
+- [ ] Change 40% asymp. best estimate to 30% + recalculate all previous values
 - [ ] Save historical Knox County School numbers from: https://datastudio.google.com/u/0/reporting/3d460c9b-1a41-4566-88b0-9264ae8c2965/page/aEpcB?feature=opengraph
 - [ ] Add new model based around these Knox County School-only numbers.
 - [ ] I just found out that the actual number of students and staff at West High School is listed on the bottom of the main page on West's website. As such, I will update the program, as well as recalculate the historical predictions to reflect these new numbers. These new numbers are larger than the previous numbers, and, as such, will increase the expected risk.
